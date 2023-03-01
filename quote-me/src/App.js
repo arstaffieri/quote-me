@@ -7,20 +7,27 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      quote: []
+      quote: '',
+      author: ''
     }
   }
   componentDidMount() {
     return fetch("https://api.quotable.io/random")
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data)
+      this.setState({
+        quote: data.content,
+        author: data.author
+      })
+    })
   }
 
   render() {
     return (
       <main className="App">
         <header>Quote Me</header>
-        <Card />
+        <Card content={this.state.quote} author={this.state.author}/>
       </main>
     );
   }
