@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Card from './Card';
 // import { getRandomQuote } from './apiCalls'
+import Header from './Header';
 
 class App extends React.Component {
   constructor() {
@@ -26,7 +27,9 @@ class App extends React.Component {
   render() {
     return (
       <main className="App">
-        <header>Quote Me</header>
+        <div className='header'>
+          <h1>Quote Me</h1>
+        </div>
         <Card content={this.state.quote} author={this.state.author}/>
       </main>
     );

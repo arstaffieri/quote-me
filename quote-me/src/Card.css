@@ -1,10 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+
+
 .card {
-    width: 700px;
-    height: 500px;
+    display: flex;
+    width: 30vw;
+    height: auto;
     border: 30px black;
-    
+    background-color: #cfe0c3;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    font-family: 'Cantarell', sans-serif;
 }
 
-.quote-container {
-    background-color: blanchedalmond;
+h3 {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h4 {
+    padding-bottom: 35px;
 }
