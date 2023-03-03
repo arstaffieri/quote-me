@@ -1,5 +1,6 @@
 import React from 'react'
 import './Search.css'
+import Card from './Card'
 
 class Search extends React.Component {
     constructor(props) {
@@ -9,8 +10,8 @@ class Search extends React.Component {
         }
     }
 
-    searchForThings = (searchTerm) => {
-        return fetch(`https://api.quotable.io/search/quotes?query=${searchTerm}`)
+    searchForThings = () => {
+        return fetch(`https://api.quotable.io/search/quotes?query=${this.state.searchTerm}`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -23,7 +24,6 @@ class Search extends React.Component {
     handleChange = (event) => {
         event.preventDefault();
         this.setState({ searchTerm: event.target.value }, () => {
-          this.searchForThings(this.state.searchTerm);
         });
       };
 
@@ -41,6 +41,7 @@ class Search extends React.Component {
                     />
                         <button className='button' onClick={this.searchForThings}>Search</button>
                 </form>
+                <Card />
             </section>
         )
     }

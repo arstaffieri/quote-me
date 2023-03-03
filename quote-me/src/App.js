@@ -43,7 +43,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" render={() => <Card content={this.state.quote} author={this.state.author}/>}></Route>
           <Route exact path='/searchPage' component={SearchPage}></Route>
-          <Route exact path='/about' component={AboutPage}></Route>
+          {/* <Route exact path='/about' component={AboutPage}></Route> */}
         </Switch>
       </main>
     );
