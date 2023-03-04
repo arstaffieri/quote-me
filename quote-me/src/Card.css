@@ -3,8 +3,8 @@
 
 .card {
     display: flex;
-    width: 25vw;
-    height: 30vh;
+    width: 30vh;
+    height: auto;
     border: 30px black;
     background-color: #cfe0c3;
     flex-direction: column;
