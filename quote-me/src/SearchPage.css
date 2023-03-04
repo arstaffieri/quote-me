@@ -1,3 +1,5 @@
-h1 {
-    font-size: larger;
+.search-page {
+    display: flex;
+    width: 100vw;
+    height: auto;
 }

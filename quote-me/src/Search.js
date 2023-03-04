@@ -38,7 +38,8 @@ class Search extends React.Component {
             return <Card author={info.author} content={info.content} />
         })
         return (
-            <section className='search-container'>
+            <article>
+                <section className='search-container'>
                 <form className='search-form' onSubmit={(event) => event.preventDefault()}>
                     <input 
                         className='search-input'
@@ -50,11 +51,12 @@ class Search extends React.Component {
                     />
                         <button className='button' onClick={this.searchForThings}>Search</button>
                 </form>
-                <div>
+                </section>
+                <div className='card-display'>
                     {isClicked && cardList}
-                    {!isClicked && <p>Search for someone</p>}
+                    {/* {!isClicked && <p>Search for someone</p>} */}
                 </div>
-            </section>
+            </article>
         )
     }
 }

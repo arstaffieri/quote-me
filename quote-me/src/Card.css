@@ -3,8 +3,8 @@
 
 .card {
     display: flex;
-    width: 30vw;
-    height: auto;
+    width: 25vw;
+    height: 30vh;
     border: 30px black;
     background-color: #cfe0c3;
     flex-direction: column;
@@ -12,6 +12,8 @@
     border-radius: 10px;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     font-family: 'Cantarell', sans-serif;
+    margin: 2vh;
+    color: black;
 }
 
 h3 {
@@ -22,4 +24,8 @@ h3 {
 
 h4 {
     padding-bottom: 35px;
+}
+
+.link {
+    text-decoration: none;
 }

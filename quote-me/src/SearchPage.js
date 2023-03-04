@@ -4,7 +4,7 @@ import Search from "./Search";
 
 const SearchPage = () => {
     return (
-        <div>
+        <div className="search-page">
             <Home />
             <Search />
         </div>
