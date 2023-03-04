@@ -29,7 +29,6 @@
 .card-display {
     display: flex;
     flex-wrap: wrap;
-    border: solid green 2px;
     justify-content: space-evenly;
     align-items: center;
     justify-items: stretch;

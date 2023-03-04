@@ -38,12 +38,15 @@ class App extends React.Component {
           <Link to='/searchPage'>
           <p>Search for Quotes</p>
           </Link>
+          <Link to='/'>
+          <p>Go Home</p>
+          </Link>
           
         </div>
         <Switch>
           <Route exact path="/" render={() => <Card content={this.state.quote} author={this.state.author}/>}></Route>
           <Route exact path='/searchPage' component={SearchPage}></Route>
-          {/* <Route exact path='/about' component={AboutPage}></Route> */}
+          <Route exact path='/about' component={AboutPage}></Route>
         </Switch>
       </main>
     );

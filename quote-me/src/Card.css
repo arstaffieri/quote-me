@@ -5,7 +5,6 @@
     display: flex;
     width: 30vh;
     height: auto;
-    border: 30px black;
     background-color: #cfe0c3;
     flex-direction: column;
     justify-content: space-between;
