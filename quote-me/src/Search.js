@@ -6,7 +6,9 @@ class Search extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            searchTerm: ''
+            searchTerm: '',
+            fullInfo: [],
+            isClicked: false
         }
     }
 
@@ -14,9 +16,11 @@ class Search extends React.Component {
         return fetch(`https://api.quotable.io/search/quotes?query=${this.state.searchTerm}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            console.log(data.results)
             this.setState({
-                searchTerm: data.author
+                searchTerm: data.author,
+                fullInfo: data.results,
+                isClicked: true
             })
         })
       }
@@ -28,6 +32,11 @@ class Search extends React.Component {
       };
 
     render() {
+        const isClicked = this.state.isClicked
+        const cardList = this.state.fullInfo.map((info) => {
+            console.log(info.content)
+            return <Card author={info.author} content={info.content} />
+        })
         return (
             <section className='search-container'>
                 <form className='search-form' onSubmit={(event) => event.preventDefault()}>
@@ -41,7 +50,10 @@ class Search extends React.Component {
                     />
                         <button className='button' onClick={this.searchForThings}>Search</button>
                 </form>
-                <Card />
+                <div>
+                    {isClicked && cardList}
+                    {!isClicked && <p>Search for someone</p>}
+                </div>
             </section>
         )
     }
