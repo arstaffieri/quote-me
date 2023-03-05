@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import Card from './Card';
+import Card from '../Card/Card';
 // import { getRandomQuote } from './apiCalls'
 // import Search from './Search';
 import { Route, Switch, Link } from 'react-router-dom';
-import SearchPage from './SearchPage'
-import AboutPage from './AboutPage'
+import SearchPage from '../SearchPage/SearchPage'
+import AboutPage from '../AboutPage/AboutPage'
 
 class App extends React.Component {
   constructor() {
