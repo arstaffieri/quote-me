@@ -34,8 +34,7 @@ class Search extends React.Component {
     render() {
         const isClicked = this.state.isClicked
         const cardList = this.state.fullInfo.map((info) => {
-            console.log(info.content)
-            return <Card author={info.author} content={info.content} />
+            return <Card getAuthorDetails={this.props.getAuthorDetails} author={info.author} content={info.content} />
         })
         return (
             <article>

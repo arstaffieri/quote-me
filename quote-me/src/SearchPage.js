@@ -1,12 +1,10 @@
 import React from "react";
-import Home from './Home'
 import Search from "./Search";
 
-const SearchPage = () => {
+const SearchPage = ({getAuthorDetails}) => {
     return (
         <div className="search-page">
-            <Home />
-            <Search />
+            <Search getAuthorDetails={getAuthorDetails}/>
         </div>
     )
 }

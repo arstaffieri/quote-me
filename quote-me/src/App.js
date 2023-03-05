@@ -6,27 +6,41 @@ import Card from './Card';
 import { Route, Switch, Link } from 'react-router-dom';
 import SearchPage from './SearchPage'
 import AboutPage from './AboutPage'
-// import Home from './Home'
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       quote: '',
-      author: ''
+      author: '',
+      searchTerm: '',
+      isClicked: false,
+      authorDetails: {}
     }
   }
+
   componentDidMount() {
     return fetch("https://api.quotable.io/random")
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       this.setState({
         quote: data.content,
-        author: data.author
+        author: data.author,
+        id: data._id
       })
     })
   }
+  
+  getAuthorDetails = (author) => {
+    return fetch(`https://quotable.io/search/authors?query=${author}`)
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+        authorDetails: data.results[0]
+      })
+    })
+  }
+
 
   render() {
     return (
@@ -35,18 +49,18 @@ class App extends React.Component {
           <h1>Quote Me</h1>
         </div>
         <div className='links-container'>
-          <Link to='/searchPage'>
-          <p>Search for Quotes</p>
-          </Link>
           <Link to='/'>
           <p>Go Home</p>
+          </Link>
+          <Link to='/searchPage'>
+          <p>Search for Quotes</p>
           </Link>
           
         </div>
         <Switch>
-          <Route exact path="/" render={() => <Card content={this.state.quote} author={this.state.author}/>}></Route>
-          <Route exact path='/searchPage' component={SearchPage}></Route>
-          <Route exact path='/about' component={AboutPage}></Route>
+          <Route exact path="/" render={() => <Card getAuthorDetails={this.getAuthorDetails} content={this.state.quote} author={this.state.author}/>}></Route>
+          <Route exact path='/searchPage'> <SearchPage getAuthorDetails={this.getAuthorDetails}/> </Route>
+          <Route exact path='/about'> <AboutPage authorDetails={this.state.authorDetails}/> </Route>
         </Switch>
       </main>
     );
