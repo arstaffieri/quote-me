@@ -1,6 +1,7 @@
 import React from 'react'
 import './Search.css'
 import Card from '../Card/Card'
+import PropTypes from 'react'
 
 class Search extends React.Component {
     constructor(props) {
@@ -14,7 +15,19 @@ class Search extends React.Component {
 
     searchForThings = () => {
         fetch(`https://api.quotable.io/search/quotes?query=${this.state.searchTerm}`)
-        .then(response => response.json())
+        .then((response )=> {
+            if(!response.ok) {
+                throw new Error('Houston, we have a problem.')
+            } else {
+                return response.json()
+            }
+        })
+        // .then((data) => {
+        //     if(!data.results.length) {
+        //         throw new Error('Search Term Not Found. Try Again!')
+        //         return <Card />
+        //     }
+        // })
         .then(data => {
             this.setState({
                 searchTerm: data.author,
@@ -36,6 +49,7 @@ class Search extends React.Component {
         const cardList = this.state.fullInfo.map((info) => {
             return <Card getAuthorDetails={this.props.getAuthorDetails} author={info.author} content={info.content} key={info._id}/>
         })
+        
         return (
             <article>
                 <section className='search-container'>
@@ -57,5 +71,12 @@ class Search extends React.Component {
         )
     }
 }
+
+Search.ReactPropTypes = {
+    searchTerm: PropTypes.string,
+    fullInfo: PropTypes.array,
+    isClicked: PropTypes.bool
+}
+
 
 export default Search

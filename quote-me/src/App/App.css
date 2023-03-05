@@ -17,3 +17,8 @@
   background-color: #40798c;
 }
 
+.links-container {
+  display: flex;
+  width: 75vw;
+  justify-content: space-between;
+}

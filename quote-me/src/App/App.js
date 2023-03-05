@@ -6,6 +6,7 @@ import Card from '../Card/Card';
 import { Route, Switch, Link } from 'react-router-dom';
 import SearchPage from '../SearchPage/SearchPage'
 import AboutPage from '../AboutPage/AboutPage'
+import Error from '../Error';
 
 class App extends React.Component {
   constructor() {
@@ -21,7 +22,13 @@ class App extends React.Component {
 
   componentDidMount() {
     return fetch("https://api.quotable.io/random")
-    .then(response => response.json())
+    .then((response) => {
+      if(!response.ok) {
+        throw new Error('Houston, we have a problem.')
+      } else {
+        return response.json()
+      }
+    })
     .then(data => {
       this.setState({
         quote: data.content,
@@ -33,7 +40,13 @@ class App extends React.Component {
   
   getAuthorDetails = (author) => {
     return fetch(`https://quotable.io/search/authors?query=${author}`)
-    .then(response => response.json())
+    .then((response) => {
+      if(!response.ok) {
+        throw new Error("Houston, we have a problem.")
+      } else {
+        return response.json()
+      }
+    })
     .then(data => {
       this.setState({
         authorDetails: data.results[0]
@@ -61,10 +74,15 @@ class App extends React.Component {
           <Route exact path="/" render={() => <Card getAuthorDetails={this.getAuthorDetails} content={this.state.quote} author={this.state.author}/>}></Route>
           <Route exact path='/searchPage'> <SearchPage getAuthorDetails={this.getAuthorDetails}/> </Route>
           <Route exact path='/about'> <AboutPage authorDetails={this.state.authorDetails}/> </Route>
+          <Route exact path='/*' render={() => <Error />}></Route>
         </Switch>
       </main>
     );
   }
 }
 
+
+
+
 export default App;
+
