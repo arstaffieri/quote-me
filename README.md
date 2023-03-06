@@ -8,8 +8,13 @@ I developed this project as my final showcase project at the end of Module 3 at 
 
 [Deployed Site](https://weary-liquid.surge.sh/)
 
-Built With
-React React Router Cypress CSS3 NodeJS Webpack
+Built With:
+https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white
+https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+
 
 Setup
 In your terminal:
