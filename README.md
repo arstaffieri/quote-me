@@ -4,7 +4,7 @@ The Quote Me application was created for those who like to see random quotes, se
 Context
 I developed this project as my final showcase project at the end of Module 3 at the Turing School for Software Development and Design after 34 weeks as a front-end developer. The project took at approximately six days to completely from planning to documentation while balancing a full courseload.
 
-[Preview of Application](https://giphy.com/embed/djfLXmVbDF8UKBQ9Fa)
+![](giphy.gif)
 
 [Deployed Site](https://weary-liquid.surge.sh/)
 
