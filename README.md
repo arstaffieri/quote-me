@@ -42,4 +42,5 @@ In your terminal:
 This was my first solo project using React and Cypress. I learned a great deal during the project. If I had it to do over again, I would have used hooks rather than class based components. I might also have built my own backend to enable users to add quotes as well. 
 
 Contact
-Angie Staffieri GitHub | LinkedIn
+[Angie-badge]: https://img.shields.io/badge/-Angie%20Staffieri-blue
+[Angie-url]: https://github.com/arstaffieri
