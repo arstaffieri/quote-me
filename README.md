@@ -7,8 +7,7 @@ I developed this project as my final showcase project at the end of Module 3 at 
 Preview of Application
 <iframe src="https://giphy.com/embed/djfLXmVbDF8UKBQ9Fa" width="480" height="234" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/djfLXmVbDF8UKBQ9Fa">via GIPHY</a></p>
 
-Deployed Site
-[Deployment Link](https://weary-liquid.surge.sh/)
+[Deployed Site](https://weary-liquid.surge.sh/)
 
 Built With
 React React Router Cypress CSS3 NodeJS Webpack
