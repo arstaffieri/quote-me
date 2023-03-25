@@ -20,13 +20,13 @@ I developed this project as my final showcase project at the end of Module 3 at 
 ### Setup
 In your terminal:
 
-* Clone down this directory: git clone https://github.com/arstaffieri/quote-me.
+* Clone down this directory: `git clone https://github.com/arstaffieri/quote-me`.
 
-* Cd into this directory: cd quote-me.
+* Cd into this directory: `cd quote-me`.
 
 * Install dependencies for this repo: `npm install`.
 
-* Run npm start to start application in your browser.
+* Run `npm start` to start application in your browser.
 
 
 ### Learning Goals
