@@ -24,7 +24,7 @@ In your terminal:
 
 * Cd into this directory: cd quote-me.
 
-* Install dependencies for this repo: npm install.
+* Install dependencies for this repo: `npm install`.
 
 * Run npm start to start application in your browser.
 
